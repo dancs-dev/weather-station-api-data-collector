@@ -64,5 +64,5 @@ if __name__ == "__main__":
         header, data = request_data()
         data_writer(header, data)
 
-        print("Sleeping for 30 seconds")
+        print(f"Sleeping for {POLLING_TIME} seconds")
         time.sleep(POLLING_TIME)
