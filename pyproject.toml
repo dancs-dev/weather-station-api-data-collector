@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "esp32-weather-station-data-collector"
+version = "0.1.0"
+description = "Program to collect data from my esp32 weather station API"
+authors = ["dancs-dev <1766253+dancs-dev@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+python-dotenv = "^0.18.0"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.6b0"
+isort = "^5.9.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 80
+target-version = ["py38"]
+experimental-string-processing = true
+
+[tool.isort]
+profile = "black"
+line_length = 80
