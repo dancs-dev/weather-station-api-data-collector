@@ -2,11 +2,12 @@ import csv
 import datetime
 import os
 import time
+from pathlib import Path
 
 import dotenv
 import requests
 
-dotenv.load_dotenv(".env")
+dotenv.load_dotenv(f"{Path().resolve()}.env")
 
 WEATHER_STATION_API_URL = os.environ.get("WEATHER_STATION_API_URL")
 WEATHER_STATION_API_ENDPOINT = os.environ.get("WEATHER_STATION_API_ENDPOINT")

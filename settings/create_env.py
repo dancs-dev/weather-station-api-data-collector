@@ -1,9 +1,10 @@
 from pathlib import Path
 
-ENV_DEFAULT = f"""WEATHER_STATION_API_URL=http://192.168.0.101
+ENV_DEFAULT = f"""WEATHER_STATION_API_URL=http://192.168.0.101:80
 WEATHER_STATION_API_ENDPOINT=/all
-CSV_SAVE_LOCATION=/data/
+CSV_SAVE_LOCATION={Path().resolve()}/data/
 POLLING_TIME=30
+TZ=Europe/London
 """
 
 
