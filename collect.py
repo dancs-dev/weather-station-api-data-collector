@@ -14,6 +14,9 @@ WEATHER_STATION_API_ENDPOINT = os.environ.get("WEATHER_STATION_API_ENDPOINT")
 CSV_SAVE_LOCATION = os.environ.get("CSV_SAVE_LOCATION")
 POLLING_TIME = int(os.environ.get("POLLING_TIME"))
 
+# Set the timezone to the value in .env.
+time.tzset()
+
 
 def create_data_save_location():
     if not os.path.exists(CSV_SAVE_LOCATION):
