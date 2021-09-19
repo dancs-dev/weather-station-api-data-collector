@@ -2,16 +2,20 @@ import csv
 import datetime
 import os
 import time
+from pathlib import Path
 
 import dotenv
 import requests
 
-dotenv.load_dotenv(".env")
+dotenv.load_dotenv(f"{Path().resolve()}/.env")
 
 WEATHER_STATION_API_URL = os.environ.get("WEATHER_STATION_API_URL")
 WEATHER_STATION_API_ENDPOINT = os.environ.get("WEATHER_STATION_API_ENDPOINT")
 CSV_SAVE_LOCATION = os.environ.get("CSV_SAVE_LOCATION")
 POLLING_TIME = int(os.environ.get("POLLING_TIME"))
+
+# Set the timezone to the value in .env.
+time.tzset()
 
 
 def create_data_save_location():
@@ -23,7 +27,9 @@ def request_data():
     headers = {"Content-Type": "application/json; charset=utf-8"}
 
     req = requests.get(
-        WEATHER_STATION_API_URL + WEATHER_STATION_API_ENDPOINT, headers=headers
+        WEATHER_STATION_API_URL + WEATHER_STATION_API_ENDPOINT,
+        headers=headers,
+        timeout=None,
     )
 
     results = req.json()
