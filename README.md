@@ -19,7 +19,7 @@ a CSV file. A CSV file is created each day.
  * Create the virtual environment using `poetry install` while in the root of
    the repo directory.
  * Create a default `.env` file using `poetry run python
-   /settings/create_env.py`.
+   settings/create_env.py`.
 
 ### Running
  * Run the data scraper using `poetry run python collect.py` from the root of
