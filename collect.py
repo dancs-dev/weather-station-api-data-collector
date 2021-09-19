@@ -27,7 +27,9 @@ def request_data():
     headers = {"Content-Type": "application/json; charset=utf-8"}
 
     req = requests.get(
-        WEATHER_STATION_API_URL + WEATHER_STATION_API_ENDPOINT, headers=headers
+        WEATHER_STATION_API_URL + WEATHER_STATION_API_ENDPOINT,
+        headers=headers,
+        timeout=None,
     )
 
     results = req.json()
