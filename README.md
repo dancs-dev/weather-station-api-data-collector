@@ -24,3 +24,25 @@ a CSV file. A CSV file is created each day.
 ### Running
  * Run the data scraper using `poetry run python collect.py` from the root of
    the project.
+
+### Creating a service
+ 1. Add a `#!` to the top of `collect.py`, pointing towards the Poetry Python
+    environment. This may be something like
+    `#!/home/yourname/.cache/pypoetry/virtualenvs/esp32-weather-station-data-collector-RK_KB3Mo-py3.8/bin/python`.
+ 1. Create a file called
+    `/etc/systemd/system/weather-station-api-data-collector.service`. Add this
+    code and adjust as needed:
+    ```
+    [Unit]
+    Description=Weather station API data collector
+
+    [Service]
+    ExecStart=/home/yourname/projects/weather-station-api-data-collector/collect.py
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+ * Start: `sudo systemctl start weather-station-api-data-collector`.
+ * Check status: `sudo systemctl status weather-station-api-data-collector`.
+ * Run on startup: `sudo systemctl enable weather-station-api-data-collector`.
