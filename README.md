@@ -1,4 +1,4 @@
-# Portfolio
+# Weather Station Data Collector
 Python-based API data collector. Intended for use with the
 [esp32-weather-station](https://github.com/dancs-dev/esp32-weather-station).
 

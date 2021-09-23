@@ -9,7 +9,6 @@ TZ=Europe/London
 
 
 def create_env(env_file):
-    """Generate an environment settings file and link to it."""
     env_file.write_text(ENV_DEFAULT)
     env_file.chmod(0o600)
     print(f"Created {env_file}")
